@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/Src/CJ60STATICLIB", JRAAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{4AB09260-189C-4934-9BEC-4131748CF1BE}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>StaticDebug/CJ60StaticLib.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>StaticDebug/</ObjectFileName>
+      <ProgramDataBaseFileName>StaticDebug/</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\CJ60StaticLib.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>../Lib/CJ60StaticLibd.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>../Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>StaticRelease/CJ60StaticLib.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>StaticRelease/</ObjectFileName>
+      <ProgramDataBaseFileName>StaticRelease/</ProgramDataBaseFileName>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\CJ60StaticLib.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>../Lib/CJ60StaticLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CJCaption.cpp" />
+    <ClCompile Include="CJControlBar.cpp" />
+    <ClCompile Include="CJDockBar.cpp" />
+    <ClCompile Include="CJDockContext.cpp" />
+    <ClCompile Include="CJExplorerBar.cpp" />
+    <ClCompile Include="CJFlatButton.cpp" />
+    <ClCompile Include="CJFlatComboBox.cpp" />
+    <ClCompile Include="CJFlatHeaderCtrl.cpp" />
+    <ClCompile Include="CJFrameInfo.cpp" />
+    <ClCompile Include="CJFrameWnd.cpp" />
+    <ClCompile Include="CJListCtrl.cpp" />
+    <ClCompile Include="CJListView.cpp" />
+    <ClCompile Include="CJMDIFrameWnd.cpp" />
+    <ClCompile Include="CJMiniDockFrameWnd.cpp" />
+    <ClCompile Include="CJOutlookBar.cpp" />
+    <ClCompile Include="CJPagerCtrl.cpp" />
+    <ClCompile Include="CJSearchEdit.cpp" />
+    <ClCompile Include="CJSizeDockBar.cpp" />
+    <ClCompile Include="CJTabctrlBar.cpp" />
+    <ClCompile Include="CJTabView.cpp" />
+    <ClCompile Include="CJToolBar.cpp" />
+    <ClCompile Include="CoolBar.cpp" />
+    <ClCompile Include="CoolMenu.cpp" />
+    <ClCompile Include="FixTB.cpp" />
+    <ClCompile Include="FlatBar.cpp" />
+    <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="hyperlink.cpp" />
+    <ClCompile Include="MenuBar.cpp" />
+    <ClCompile Include="ModulVer.cpp" />
+    <ClCompile Include="ShellPidl.cpp" />
+    <ClCompile Include="ShellTree.cpp" />
+    <ClCompile Include="SHFileInfo.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Subclass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\CJ60Lib.h" />
+    <ClInclude Include="..\Include\CJCaption.h" />
+    <ClInclude Include="..\Include\CJControlBar.h" />
+    <ClInclude Include="..\Include\CJDockBar.h" />
+    <ClInclude Include="..\Include\CJDockContext.h" />
+    <ClInclude Include="..\Include\CJExplorerBar.h" />
+    <ClInclude Include="..\Include\CJFlatButton.h" />
+    <ClInclude Include="..\Include\CJFlatComboBox.h" />
+    <ClInclude Include="..\Include\CJFlatHeaderCtrl.h" />
+    <ClInclude Include="..\Include\CJFrameInfo.h" />
+    <ClInclude Include="..\Include\CJFrameWnd.h" />
+    <ClInclude Include="..\Include\CJListCtrl.h" />
+    <ClInclude Include="..\Include\CJListView.h" />
+    <ClInclude Include="..\Include\CJMDIFrameWnd.h" />
+    <ClInclude Include="..\Include\CJMiniDockFrameWnd.h" />
+    <ClInclude Include="..\Include\CJOutlookBar.h" />
+    <ClInclude Include="..\Include\CJPagerCtrl.h" />
+    <ClInclude Include="..\Include\CJSearchEdit.h" />
+    <ClInclude Include="..\Include\CJSizeDockBar.h" />
+    <ClInclude Include="..\Include\CJTabCtrlBar.h" />
+    <ClInclude Include="..\Include\CJTabView.h" />
+    <ClInclude Include="..\Include\CJToolBar.h" />
+    <ClInclude Include="..\Include\CoolBar.h" />
+    <ClInclude Include="..\Include\CoolMenu.h" />
+    <ClInclude Include="..\Include\FixTB.h" />
+    <ClInclude Include="..\Include\FlatBar.h" />
+    <ClInclude Include="..\Include\HyperLink.h" />
+    <ClInclude Include="..\Include\MenuBar.h" />
+    <ClInclude Include="..\Include\ModulVer.h" />
+    <ClInclude Include="..\Include\ShellPidl.h" />
+    <ClInclude Include="..\Include\ShellTree.h" />
+    <ClInclude Include="..\Include\SHFileInfo.h" />
+    <ClInclude Include="..\Include\Subclass.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

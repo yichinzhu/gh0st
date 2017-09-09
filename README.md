@@ -1,0 +1,1 @@
+gh0st beta 3.6 builded on VS 2017

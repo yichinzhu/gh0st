@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gh0st", "gh0st\gh0st.vcxproj", "{B3155074-1A2A-EDCE-3413-E5FCD8191F69}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "install", "Server\install\install.vcxproj", "{EDBFA23A-2025-4131-F885-3B1E4432323B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "svchost", "Server\svchost\svchost.vcxproj", "{FDFBC269-F80E-D52F-1DF3-D4065BC90F4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Console|Win32 = Console|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3155074-1A2A-EDCE-3413-E5FCD8191F69}.Console|Win32.ActiveCfg = Release|Win32
+		{B3155074-1A2A-EDCE-3413-E5FCD8191F69}.Console|Win32.Build.0 = Release|Win32
+		{B3155074-1A2A-EDCE-3413-E5FCD8191F69}.Release|Win32.ActiveCfg = Release|Win32
+		{B3155074-1A2A-EDCE-3413-E5FCD8191F69}.Release|Win32.Build.0 = Release|Win32
+		{B3155074-1A2A-EDCE-3413-E5FCD8191F69}.Template|Win32.ActiveCfg = Release|Win32
+		{B3155074-1A2A-EDCE-3413-E5FCD8191F69}.Template|Win32.Build.0 = Release|Win32
+		{EDBFA23A-2025-4131-F885-3B1E4432323B}.Console|Win32.ActiveCfg = Template|Win32
+		{EDBFA23A-2025-4131-F885-3B1E4432323B}.Console|Win32.Build.0 = Template|Win32
+		{EDBFA23A-2025-4131-F885-3B1E4432323B}.Release|Win32.ActiveCfg = Release|Win32
+		{EDBFA23A-2025-4131-F885-3B1E4432323B}.Release|Win32.Build.0 = Release|Win32
+		{EDBFA23A-2025-4131-F885-3B1E4432323B}.Template|Win32.ActiveCfg = Template|Win32
+		{EDBFA23A-2025-4131-F885-3B1E4432323B}.Template|Win32.Build.0 = Template|Win32
+		{FDFBC269-F80E-D52F-1DF3-D4065BC90F4B}.Console|Win32.ActiveCfg = Console|Win32
+		{FDFBC269-F80E-D52F-1DF3-D4065BC90F4B}.Console|Win32.Build.0 = Console|Win32
+		{FDFBC269-F80E-D52F-1DF3-D4065BC90F4B}.Release|Win32.ActiveCfg = Release|Win32
+		{FDFBC269-F80E-D52F-1DF3-D4065BC90F4B}.Release|Win32.Build.0 = Release|Win32
+		{FDFBC269-F80E-D52F-1DF3-D4065BC90F4B}.Template|Win32.ActiveCfg = Template|Win32
+		{FDFBC269-F80E-D52F-1DF3-D4065BC90F4B}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
