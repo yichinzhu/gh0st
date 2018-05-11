@@ -1,0 +1,6 @@
+.vs/
+Release
+*.dll
+*.log
+*.lib
+*.exp

